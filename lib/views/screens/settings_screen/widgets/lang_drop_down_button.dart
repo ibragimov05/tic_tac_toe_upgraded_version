@@ -25,6 +25,9 @@ class _LangDropDownButtonState extends State<LangDropDownButton> {
   @override
   Widget build(BuildContext context) {
     return DropdownButton<String>(
+      iconEnabledColor: CustomFunctions.isLight(context)
+          ? Colors.black
+          : Colors.white,
       underline: Container(),
       dropdownColor: CustomFunctions.isLight(context)
           ? const Color(0xFFdef8fa)
@@ -54,10 +57,15 @@ class _LangDropDownButtonState extends State<LangDropDownButton> {
             }
           },
           value: value,
-          child: Text(value,style: TextStyle(
-            color: CustomFunctions.isLight(context) ? Colors.black : Colors.white,
-            fontWeight: FontWeight.w700
-          ),),
+          child: Text(
+            value,
+            style: TextStyle(
+              color: CustomFunctions.isLight(context)
+                  ? Colors.black
+                  : Colors.white,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
         );
       }).toList(),
     );
