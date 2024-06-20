@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tic_tac_toe_upgraded_version/utils/custom_functions.dart';
@@ -19,11 +20,11 @@ class ScoreTable extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            'Scores',
+            context.tr('scores'),
             style: TextStyle(
               color: CustomFunctions.isLight(context)
                   ? Colors.cyan
-                  : Color(0xFFEEEEEE),
+                  : const Color(0xFFEEEEEE),
               fontSize: 30,
               fontWeight: FontWeight.w600,
             ),
@@ -42,7 +43,7 @@ class ScoreTable extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: CustomFunctions.isLight(context)
                       ? Colors.white
-                      : Color(0xFF222831),
+                      : const Color(0xFF222831),
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: Row(
@@ -55,7 +56,7 @@ class ScoreTable extends StatelessWidget {
                         fontSize: 25,
                         color: CustomFunctions.isLight(context)
                             ? Colors.cyan
-                            : Color(0xFFEEEEEE),
+                            : const Color(0xFFEEEEEE),
                       ),
                     ),
                   ],

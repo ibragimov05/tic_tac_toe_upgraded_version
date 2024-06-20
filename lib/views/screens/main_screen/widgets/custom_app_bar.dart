@@ -10,14 +10,14 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: CustomFunctions.isLight(context)
-          ? Color(0xFFd5f7f7)
-          : Color(0xFF222831),
+          ? const Color(0xFFd5f7f7)
+          : const Color(0xFF222831),
       title: Text(
         'TicTac toe',
         style: TextStyle(
           color: CustomFunctions.isLight(context)
               ? Colors.cyan
-              : Color(0xFFEEEEEE),
+              : const Color(0xFFEEEEEE),
           fontWeight: FontWeight.w700,
           fontSize: 25,
         ),
@@ -39,7 +39,7 @@ class CustomAppBar extends StatelessWidget {
               child: Icon(
                 Icons.settings,
                 color:
-                    CustomFunctions.isLight(context) ? null : Color(0xFFEEEEEE),
+                    CustomFunctions.isLight(context) ? Colors.grey : const Color(0xFFEEEEEE),
               ),
             ),
           ),

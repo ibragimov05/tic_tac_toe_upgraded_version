@@ -1,13 +1,32 @@
-import 'dart:ffi';
-
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:tic_tac_toe_upgraded_version/utils/app_constants.dart';
 import 'package:tic_tac_toe_upgraded_version/views/screens/main_screen/screen/main_screen.dart';
+import 'package:tic_tac_toe_upgraded_version/views/widgets/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
   final savedThemeMode = await AdaptiveTheme.getThemeMode();
-  runApp(App(savedThemeMode: savedThemeMode));
+
+  AppConstants.isLight = await AppConstants.getIsLight;
+  runApp(
+    EasyLocalization(
+      supportedLocales: const [
+        Locale('en'), // Corrected locale
+        Locale('ru'), // Russian
+        Locale('uz'), // Uzbek
+      ],
+      path: 'resources/langs',
+      fallbackLocale: const Locale('uz'),
+      // Ensure this is also correct
+      startLocale: const Locale('en'),
+      // Ensure consistency
+      child: App(savedThemeMode: savedThemeMode),
+    ),
+  );
 }
 
 class App extends StatelessWidget {
@@ -21,31 +40,29 @@ class App extends StatelessWidget {
       light: ThemeData(
         useMaterial3: true,
         brightness: Brightness.light,
-        colorSchemeSeed: Colors.blue,
       ),
       dark: ThemeData(
         useMaterial3: true,
         brightness: Brightness.dark,
-        colorSchemeSeed: Colors.blue,
       ),
       initial: savedThemeMode ?? AdaptiveThemeMode.light,
-      builder: (light, dark) => MaterialApp(
+      builder: (ThemeData light, ThemeData dark) => MaterialApp(
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        locale: context.locale,
         darkTheme: dark,
         debugShowCheckedModeBanner: false,
-        // theme: ThemeData(
-        //   appBarTheme: const AppBarTheme(
-        //     backgroundColor: Color(0xFFd5f7f7),
-        //     titleTextStyle: TextStyle(
-        //       color: Colors.cyan,
-        //       fontWeight: FontWeight.w700,
-        //       fontSize: 25,
-        //     ),
-        //   ),
-        //   scaffoldBackgroundColor: const Color(0xFFedfcfc),
-        // ),
-        home: const MainScreen(),
+        home: AnimatedSplashScreen(
+          backgroundColor: AppConstants.isLight
+              ? const Color(0xFFedfcfc)
+              : const Color(0xFF31363F),
+          duration: 3000,
+          splashTransition: SplashTransition.fadeTransition,
+          splash: const SplashWidget(),
+          splashIconSize: 150,
+          nextScreen: const MainScreen(),
+        ),
       ),
-      debugShowFloatingThemeButton: true,
     );
   }
 }

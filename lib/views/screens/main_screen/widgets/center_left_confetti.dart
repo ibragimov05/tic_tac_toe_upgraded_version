@@ -16,7 +16,6 @@ class CenterLeftConfetti extends StatelessWidget {
       child: ConfettiWidget(
         confettiController: controllerLeft,
         blastDirection: 0,
-        // Left
         particleDrag: 0.05,
         emissionFrequency: 0.05,
         numberOfParticles: 20,

@@ -209,7 +209,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CustomFunctions.isLight(context) ? Color(0xFFedfcfc) : Color(0xFF31363F),
+      backgroundColor: CustomFunctions.isLight(context) ? const Color(0xFFedfcfc) : const Color(0xFF31363F),
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
         child: CustomAppBar(),
