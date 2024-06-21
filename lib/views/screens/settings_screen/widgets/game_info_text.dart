@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:tic_tac_toe_upgraded_version/utils/custom_functions.dart';
 
 class GameInfoText extends StatelessWidget {
-   GameInfoText({super.key});
+  GameInfoText({super.key});
 
   final TextStyle titleStyle = const TextStyle(
     fontSize: 16,
@@ -18,7 +18,7 @@ class GameInfoText extends StatelessWidget {
   final Color titleLightColor = Colors.grey;
   final Color descriptionLightColor = Colors.grey.withOpacity(0.6);
 
-   Color titleDarkColor = Colors.white.withOpacity(0.8);
+  Color titleDarkColor = Colors.white.withOpacity(0.8);
   final Color descriptionDarkColor = Colors.white.withOpacity(0.5);
 
   @override
@@ -186,6 +186,7 @@ class GameInfoText extends StatelessWidget {
                 : descriptionDarkColor,
           ),
         ),
+        const SizedBox(height: kToolbarHeight),
       ],
     );
   }

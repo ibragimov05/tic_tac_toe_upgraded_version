@@ -96,12 +96,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  context.tr('about_game'),
-                  style: const TextStyle(
-                    color: Colors.cyan,
-                    fontWeight: FontWeight.w700,
-                    fontSize: 22,
+                SizedBox(
+                  width: 330,
+                  child: Text(
+                    context.tr('about_game'),
+                    style: const TextStyle(
+                      color: Colors.cyan,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 17,
+                    ),
                   ),
                 ),
               ],
