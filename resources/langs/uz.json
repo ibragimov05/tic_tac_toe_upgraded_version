@@ -4,5 +4,46 @@
   "new_game": "Yangi o'yin",
   "settings": "Sozlamalar",
   "dark_mode": "Tungi rejim",
-  "language": "Til"
+  "language": "Til",
+  "about_game": "O'yin haqida",
+  "enhanced_st": {
+    "title": "Yaxshilangan strategik fikrlash:",
+    "description": "O'yinchilar nafaqat o'zlarining kelajakdagi harakatlarini, balki raqibning potensial harakatlari va natijadagi taxtadagi holatlarni oldindan rejalashtirishlari kerak bo'ladi."
+  },
+  "improved_pr": {
+    "title": "Yaxshilangan muammoni hal qilish qobiliyati:",
+    "description": "O'yinning dinamik xususiyati, avvalgi harakatlar yo'q bo'lib ketadigan joyda, o'yinchilarni doimiy ravishda yangi muammolarni hal qilishga va o'z strategiyalarini moslashtirishga majbur qiladi."
+  },
+  "increased_focus": {
+    "title": "Diqqat va e'tiborning ortishi:",
+    "description": "Chizilgan holatlarsiz doimiy o'yin o'yinchilarni butun o'yin davomida faol va e'tiborli bo'lishiga ishonch hosil qiladi, chunki taxtadagi holat doimo o'zgarib turadi."
+  },
+  "better_memory": {
+    "title": "Yaxshiroq xotira ishlatilishi:",
+    "description": "Harakatlar ketma-ketligini eslab qolish va qaysi belgilar yo'q bo'lib ketishini oldindan aytib berish xotira ko'nikmalarini rivojlantirish va mashq qilishga yordam beradi."
+  },
+  "promotes_creativity": {
+    "title": "Ijodkorlikni rag'batlantiradi:",
+    "description": "Noyob mexanikalar o'yinchilarni standartlardan tashqari o'ylashga va g'alaba qozonish uchun ijodiy strategiyalar ishlab chiqishga undaydi."
+  },
+  "encourages_fair_play": {
+    "title": "Adolatli o'yin va raqobatni rag'batlantiradi:",
+    "description": "Durangsiz holatlar aniq g'olibni ta'minlaydi, raqobat ruhini va g'alaba quvonchini oshiradi, shu bilan birga raqibning strategiyalariga hurmatni rag'batlantiradi."
+  },
+  "educational_value": {
+    "title": "Ta'limiy qiymat:",
+    "description": "O'yin o'yin nazariyasi, dinamik tizimlar va strategik rejalashtirish tushunchalarini qiziqarli va interaktiv tarzda o'rgatish uchun ta'limiy vosita sifatida ishlatilishi mumkin."
+  },
+  "entertainment_replayability": {
+    "title": "Ko'ngilocharlik va qayta o'ynash qobiliyati:",
+    "description": "Noyob mexanikalar o'yinni yanada qiziqarli qiladi va uning qayta o'ynash qiymatini oshiradi, chunki har bir o'yin ko'plab usullarda rivojlanishi mumkin."
+  },
+  "reduces_stalemate_frustration": {
+    "title": "Durangdan kelib chiqqan hayajonni kamaytiradi:",
+    "description": "An'anaviy Tic-Tac-Toe ko'pincha durang bilan tugaydi, bu esa xafa bo'lishi mumkin. Sizning versiyangiz bu noxushlikni yo'q qiladi, aniq natija bilan yanada qoniqarli tajriba beradi."
+  },
+  "social_interaction": {
+    "title": "Ijtimoiy o'zaro ta'sir:",
+    "description": "An'anaviy Tic-Tac-Toe kabi, sizning variantingiz ham ijtimoiy faoliyat bo'lib, o'yinchilar o'rtasida muloqot, aloqa va do'stona raqobatni rag'batlantiradi."
+  }
 }

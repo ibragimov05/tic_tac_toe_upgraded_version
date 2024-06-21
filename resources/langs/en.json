@@ -4,5 +4,46 @@
   "new_game": "New game",
   "settings": "Settings",
   "dark_mode": "Dark mode",
-  "language": "Language"
+  "language": "Language",
+  "about_game": "About game",
+  "enhanced_st": {
+    "title": "Enhanced Strategic Thinking:",
+    "description": "Players must plan ahead more carefully, anticipating not only their own future moves but also their opponent's potential moves and the resulting board states."
+  },
+  "improved_pr": {
+    "title": "Improved Problem-Solving Skills:",
+    "description": "The dynamic nature of the game, where earlier moves disappear, requires players to constantly solve new problems and adapt their strategies accordingly."
+  },
+  "increased_focus": {
+    "title": "Increased Focus and Attention:",
+    "description": "Continuous play without draws ensures that players stay engaged and attentive throughout the game, as the board state is always changing."
+  },
+  "better_memory": {
+    "title": "Better Memory Utilization:",
+    "description": "Remembering the sequence of moves and predicting which symbols will disappear helps in developing and exercising memory skills."
+  },
+  "promotes_creativity": {
+    "title": "Promotes Creativity:",
+    "description": "The unique mechanics encourage players to think outside the box and come up with creative strategies to win."
+  },
+  "encourages_fair_play": {
+    "title": "Encourages Fair Play and Competitiveness:",
+    "description": "The absence of draws ensures a definitive winner, promoting a competitive spirit and the thrill of victory, while also encouraging fair play and respect for the opponent's strategies."
+  },
+  "educational_value": {
+    "title": "Educational Value:",
+    "description": "The game can be used as an educational tool to teach concepts of game theory, dynamic systems, and strategic planning in a fun and interactive way."
+  },
+  "entertainment_replayability": {
+    "title": "Entertainment and Replayability:",
+    "description": "The novel mechanics make the game more entertaining and increase its replay value, as each game can unfold in countless ways."
+  },
+  "reduces_stalemate_frustration": {
+    "title": "Reduces Stalemate Frustration:",
+    "description": "Traditional Tic-Tac-Toe often ends in a draw, which can be frustrating. Your version eliminates this frustration, providing a more satisfying experience with a clear outcome."
+  },
+  "social_interaction": {
+    "title": "Social Interaction:",
+    "description": "Like traditional Tic-Tac-Toe, your variant can be a social activity, encouraging interaction, communication, and friendly competition between players."
+  }
 }

@@ -1,7 +1,9 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:fading_edge_scrollview/fading_edge_scrollview.dart';
 import 'package:flutter/material.dart';
 import 'package:tic_tac_toe_upgraded_version/utils/custom_functions.dart';
+import 'package:tic_tac_toe_upgraded_version/views/screens/settings_screen/widgets/game_info_text.dart';
 import 'package:tic_tac_toe_upgraded_version/views/screens/settings_screen/widgets/lang_drop_down_button.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -12,6 +14,8 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
+  final _controller = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,44 +47,79 @@ class _SettingsScreenState extends State<SettingsScreen> {
         ),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          SwitchListTile(
-            activeColor: Colors.white,
-            activeTrackColor: const Color(0xFF4BD863),
-            value: AdaptiveTheme.of(context).mode.isDark,
-            inactiveThumbColor: Colors.grey,
-            inactiveTrackColor: Colors.white,
-            onChanged: (value) {
-              if (value) {
-                AdaptiveTheme.of(context).setDark();
-              } else {
-                AdaptiveTheme.of(context).setLight();
-              }
-            },
-            title: Text(
-              context.tr('dark_mode'
-                  ''),
-              style: TextStyle(
-                color: CustomFunctions.isLight(context)
-                    ? Colors.grey
-                    : const Color(0xFFEEEEEE),
-                fontSize: 20,
-                fontWeight: FontWeight.w700,
+          Column(
+            children: [
+              SwitchListTile(
+                activeColor: Colors.white,
+                activeTrackColor: const Color(0xFF4BD863),
+                value: AdaptiveTheme.of(context).mode.isDark,
+                inactiveThumbColor: Colors.grey,
+                inactiveTrackColor: Colors.white,
+                onChanged: (value) {
+                  if (value) {
+                    AdaptiveTheme.of(context).setDark();
+                  } else {
+                    AdaptiveTheme.of(context).setLight();
+                  }
+                },
+                title: Text(
+                  context.tr('dark_mode'
+                      ''),
+                  style: TextStyle(
+                    color: CustomFunctions.isLight(context)
+                        ? Colors.grey
+                        : const Color(0xFFEEEEEE),
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
               ),
+              ListTile(
+                  title: Text(
+                    context.tr('language'),
+                    style: TextStyle(
+                      color: CustomFunctions.isLight(context)
+                          ? Colors.grey
+                          : const Color(0xFFEEEEEE),
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  trailing: const LangDropDownButton()),
+            ],
+          ),
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  context.tr('about_game'),
+                  style: const TextStyle(
+                    color: Colors.cyan,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 22,
+                  ),
+                ),
+              ],
             ),
           ),
-          ListTile(
-            title: Text(
-              context.tr('language'),
-              style: TextStyle(
-                color: CustomFunctions.isLight(context)
-                    ? Colors.grey
-                    : const Color(0xFFEEEEEE),
-                fontSize: 20,
-                fontWeight: FontWeight.w700,
+          Expanded(
+            child: FadingEdgeScrollView.fromSingleChildScrollView(
+              gradientFractionOnStart: 0.3,
+              gradientFractionOnEnd: 0.3,
+              child: SingleChildScrollView(
+                controller: _controller,
+                child: Padding(
+                  padding:
+                      const EdgeInsets.only(left: 20.0, right: 20.0, top: 20),
+                  child: GameInfoText(),
+                ),
               ),
             ),
-            trailing: const LangDropDownButton()
           ),
         ],
       ),

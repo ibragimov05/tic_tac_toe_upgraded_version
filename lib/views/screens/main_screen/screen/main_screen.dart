@@ -22,20 +22,6 @@ class _MainScreenState extends State<MainScreen> {
   late ConfettiController _controllerLeft;
   late ConfettiController _controllerRight;
 
-  @override
-  void initState() {
-    super.initState();
-    _controllerLeft = ConfettiController(duration: const Duration(seconds: 1));
-    _controllerRight = ConfettiController(duration: const Duration(seconds: 1));
-  }
-
-  @override
-  void dispose() {
-    _controllerLeft.dispose();
-    _controllerRight.dispose();
-    super.dispose();
-  }
-
   final List<List<String>> _board = List.generate(
     3,
     (_) => List.filled(3, ''),
@@ -57,6 +43,13 @@ class _MainScreenState extends State<MainScreen> {
 
   int _xScore = 0;
   int _oScore = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _controllerLeft = ConfettiController(duration: const Duration(seconds: 1));
+    _controllerRight = ConfettiController(duration: const Duration(seconds: 1));
+  }
 
   void _placeMark(int row, int col) {
     if (_board[row][col].isEmpty && !_isGameOver) {
@@ -126,16 +119,6 @@ class _MainScreenState extends State<MainScreen> {
           [i, 2]
         ];
         break;
-      } else if (_board[0][i] == 'x' &&
-          _board[1][i] == 'x' &&
-          _board[2][i] == 'x') {
-        isXWon = true;
-        wonIndexes = [
-          [0, i],
-          [1, i],
-          [2, i]
-        ];
-        break;
       } else if (_board[i][0] == 'o' &&
           _board[i][1] == 'o' &&
           _board[i][2] == 'o') {
@@ -144,6 +127,16 @@ class _MainScreenState extends State<MainScreen> {
           [i, 0],
           [i, 1],
           [i, 2]
+        ];
+        break;
+      }
+
+      if (_board[0][i] == 'x' && _board[1][i] == 'x' && _board[2][i] == 'x') {
+        isXWon = true;
+        wonIndexes = [
+          [0, i],
+          [1, i],
+          [2, i]
         ];
         break;
       } else if (_board[0][i] == 'o' &&
@@ -159,7 +152,7 @@ class _MainScreenState extends State<MainScreen> {
       }
     }
 
-    if (!(isXWon || isOWon)) {
+    if (!isXWon && !isOWon) {
       if (_board[0][0] == 'x' && _board[1][1] == 'x' && _board[2][2] == 'x') {
         isXWon = true;
         wonIndexes = [
@@ -176,6 +169,24 @@ class _MainScreenState extends State<MainScreen> {
           [1, 1],
           [2, 2]
         ];
+      } else if (_board[0][2] == 'x' &&
+          _board[1][1] == 'x' &&
+          _board[2][0] == 'x') {
+        isXWon = true;
+        wonIndexes = [
+          [0, 2],
+          [1, 1],
+          [2, 0]
+        ];
+      } else if (_board[0][2] == 'o' &&
+          _board[1][1] == 'o' &&
+          _board[2][0] == 'o') {
+        isOWon = true;
+        wonIndexes = [
+          [0, 2],
+          [1, 1],
+          [2, 0]
+        ];
       }
     }
 
@@ -188,6 +199,8 @@ class _MainScreenState extends State<MainScreen> {
         _oScore++;
       }
       _isGameOver = true;
+      _fadingIconO = null;
+      _fadingIconX = null;
       _startFlashing();
     }
   }
@@ -207,9 +220,18 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   @override
+  void dispose() {
+    _controllerLeft.dispose();
+    _controllerRight.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CustomFunctions.isLight(context) ? const Color(0xFFedfcfc) : const Color(0xFF31363F),
+      backgroundColor: CustomFunctions.isLight(context)
+          ? const Color(0xFFedfcfc)
+          : const Color(0xFF31363F),
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
         child: CustomAppBar(),
