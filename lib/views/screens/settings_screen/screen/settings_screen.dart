@@ -116,9 +116,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
               gradientFractionOnEnd: 0.3,
               child: SingleChildScrollView(
                 controller: _controller,
-                child: Padding(
+                child: const Padding(
                   padding:
-                      const EdgeInsets.only(left: 20.0, right: 20.0, top: 20),
+                      EdgeInsets.only(left: 20.0, right: 20.0, top: 20),
                   child: GameInfoText(),
                 ),
               ),

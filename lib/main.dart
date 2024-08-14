@@ -15,15 +15,13 @@ void main() async {
   runApp(
     EasyLocalization(
       supportedLocales: const [
-        Locale('en'), // Corrected locale
-        Locale('ru'), // Russian
-        Locale('uz'), // Uzbek
+        Locale('en'),
+        Locale('ru'),
+        Locale('uz'),
       ],
       path: 'resources/langs',
       fallbackLocale: const Locale('uz'),
-      // Ensure this is also correct
       startLocale: const Locale('en'),
-      // Ensure consistency
       child: App(savedThemeMode: savedThemeMode),
     ),
   );

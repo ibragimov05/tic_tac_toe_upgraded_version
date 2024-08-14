@@ -2,9 +2,14 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:tic_tac_toe_upgraded_version/utils/custom_functions.dart';
 
-class GameInfoText extends StatelessWidget {
-  GameInfoText({super.key});
+class GameInfoText extends StatefulWidget {
+  const GameInfoText({super.key});
 
+  @override
+  State<GameInfoText> createState() => _GameInfoTextState();
+}
+
+class _GameInfoTextState extends State<GameInfoText> {
   final TextStyle titleStyle = const TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w700,
@@ -16,9 +21,11 @@ class GameInfoText extends StatelessWidget {
   );
 
   final Color titleLightColor = Colors.grey;
+
   final Color descriptionLightColor = Colors.grey.withOpacity(0.6);
 
   Color titleDarkColor = Colors.white.withOpacity(0.8);
+
   final Color descriptionDarkColor = Colors.white.withOpacity(0.5);
 
   @override
