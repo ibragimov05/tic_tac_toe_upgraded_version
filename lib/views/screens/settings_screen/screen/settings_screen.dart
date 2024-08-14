@@ -51,34 +51,23 @@ class _SettingsScreenState extends State<SettingsScreen> {
         children: [
           Column(
             children: [
-              SwitchListTile(
-                activeColor: Colors.white,
-                activeTrackColor: const Color(0xFF4BD863),
-                value: AdaptiveTheme.of(context).mode.isDark,
-                inactiveThumbColor: Colors.grey,
-                inactiveTrackColor: Colors.white,
-                onChanged: (value) {
-                  if (value) {
-                    AdaptiveTheme.of(context).setDark();
-                  } else {
-                    AdaptiveTheme.of(context).setLight();
-                  }
-                },
-                title: Text(
-                  context.tr('dark_mode'
-                      ''),
-                  style: TextStyle(
-                    color: CustomFunctions.isLight(context)
-                        ? Colors.grey
-                        : const Color(0xFFEEEEEE),
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-              ),
-              ListTile(
+              Semantics(
+                label: context.tr('dark_mode'),
+                child: SwitchListTile(
+                  activeColor: Colors.white,
+                  activeTrackColor: const Color(0xFF4BD863),
+                  value: AdaptiveTheme.of(context).mode.isDark,
+                  inactiveThumbColor: Colors.grey,
+                  inactiveTrackColor: Colors.white,
+                  onChanged: (value) {
+                    if (value) {
+                      AdaptiveTheme.of(context).setDark();
+                    } else {
+                      AdaptiveTheme.of(context).setLight();
+                    }
+                  },
                   title: Text(
-                    context.tr('language'),
+                    context.tr('dark_mode'),
                     style: TextStyle(
                       color: CustomFunctions.isLight(context)
                           ? Colors.grey
@@ -87,23 +76,42 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       fontWeight: FontWeight.w700,
                     ),
                   ),
-                  trailing: const LangDropDownButton()),
+                ),
+              ),
+              Semantics(
+                label: context.tr('language'),
+                child: ListTile(
+                    title: Text(
+                      context.tr('language'),
+                      style: TextStyle(
+                        color: CustomFunctions.isLight(context)
+                            ? Colors.grey
+                            : const Color(0xFFEEEEEE),
+                        fontSize: 20,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    trailing: const LangDropDownButton()),
+              ),
             ],
           ),
           Padding(
             padding:
-                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+            const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  width: 330,
-                  child: Text(
-                    context.tr('about_game'),
-                    style: const TextStyle(
-                      color: Colors.cyan,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 17,
+                Semantics(
+                  label: context.tr('about_game'),
+                  child: SizedBox(
+                    width: 330,
+                    child: Text(
+                      context.tr('about_game'),
+                      style: const TextStyle(
+                        color: Colors.cyan,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 17,
+                      ),
                     ),
                   ),
                 ),
@@ -118,7 +126,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 controller: _controller,
                 child: Padding(
                   padding:
-                      const EdgeInsets.only(left: 20.0, right: 20.0, top: 20),
+                  const EdgeInsets.only(left: 20.0, right: 20.0, top: 20),
                   child: GameInfoText(),
                 ),
               ),
