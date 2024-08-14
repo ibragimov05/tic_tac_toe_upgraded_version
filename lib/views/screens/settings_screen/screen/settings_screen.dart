@@ -97,7 +97,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
           Padding(
             padding:
-            const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -124,9 +124,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
               gradientFractionOnEnd: 0.3,
               child: SingleChildScrollView(
                 controller: _controller,
-                child: Padding(
-                  padding:
-                  const EdgeInsets.only(left: 20.0, right: 20.0, top: 20),
+                child: const Padding(
+                  padding: EdgeInsets.only(left: 20.0, right: 20.0, top: 20),
                   child: GameInfoText(),
                 ),
               ),

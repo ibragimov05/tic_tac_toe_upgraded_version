@@ -25,9 +25,8 @@ class _LangDropDownButtonState extends State<LangDropDownButton> {
   @override
   Widget build(BuildContext context) {
     return DropdownButton<String>(
-      iconEnabledColor: CustomFunctions.isLight(context)
-          ? Colors.black
-          : Colors.white,
+      iconEnabledColor:
+          CustomFunctions.isLight(context) ? Colors.black : Colors.white,
       underline: Container(),
       dropdownColor: CustomFunctions.isLight(context)
           ? const Color(0xFFdef8fa)
@@ -46,12 +45,15 @@ class _LangDropDownButtonState extends State<LangDropDownButton> {
             SharedPreferences sharedPreferences =
                 await SharedPreferences.getInstance();
             if (value == 'English') {
+              if (!context.mounted) return;
               context.setLocale(const Locale('en'));
               sharedPreferences.setString('lang', 'English');
             } else if (value == 'Uzbek') {
+              if (!context.mounted) return;
               context.setLocale(const Locale('uz'));
               sharedPreferences.setString('lang', 'Uzbek');
             } else if (value == 'Russian') {
+              if (!context.mounted) return;
               context.setLocale(const Locale('ru'));
               sharedPreferences.setString('lang', 'Russian');
             }

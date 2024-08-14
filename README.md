@@ -4,13 +4,6 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+https://github.com/ibragimov05/tic_tac_toe_upgraded_version/assets/147605613/35121a3d-3bdf-41e6-aafe-fbb65d290e44
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Ilova haqida to'liq ma'lumot: [link.](https://t.me/ibragimovs_blog/25)
